@@ -5,18 +5,24 @@ class ListNode:
         self.next = None
 
 
+### 这里面ListNode不可迭代，所以是这样搞递归
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        li = []
-        for i in l1.val:
-            li.append(i)
-        for i in l2.val:
-            li.append(i)
-        return li
+        if l1 is None:
+            return l2
+        elif l2 is None:
+            return l1
+        elif l1.val < l2.val:
+            l1.next = self.mergeTwoLists(l1.next, l2)
+            return l1
+        else:
+            l2.next = self.mergeTwoLists(l1, l2.next)
+            return l2
 
 
-l1 = ListNode([1,2,3])
-l2 = ListNode([1,2,4])
-print(l1.val)
+li1 = ListNode([1, 2, 3])
+li2 = ListNode([1, 2, 4])
+print(li1.val)
 a = Solution()
-print(a.mergeTwoLists(l1,l2))
+print(a.mergeTwoLists(li1, li2))
