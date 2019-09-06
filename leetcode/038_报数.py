@@ -1,4 +1,5 @@
 class Solution:
+    # 常规的从前往后
     def countAndSay(self, n: int) -> str:
         if n == 1:
             return "1"
@@ -53,9 +54,6 @@ class Solution:
                 while j < len(a):
                     li[n - 2] += int(a[i]) * b[j]
                     j += 1
-
         # s=countAndSay(self,n-1)
         return li[n - 1]
-
-
     #从后往前推
