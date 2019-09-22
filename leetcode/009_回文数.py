@@ -28,7 +28,3 @@ class Solution:
         r = list(map(lambda i: int(10**-i * x % 10), range(int(math.log10(x)), -1, -1))) if x > 0 else [0, x]
         return r == r[::-1]
 
-# 作者：QQqun902025048
-# 链接：https://leetcode-cn.com/problems/palindrome-number/solution/python-1xing-zi-fu-chuan-2xing-fei-zi-fu-chuan-by-/
-# 来源：力扣（LeetCode）
-# 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
